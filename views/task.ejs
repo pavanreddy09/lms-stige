@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+
+
+  <title>Online Learning Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      height: 70px;
+      /* background-color: pink; */
+      padding: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: space-between;
+      width: 500px;
+      margin-top: 8px;
+    }
+
+    nav ul li {
+      list-style: none;
+
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-size: 17px;
+      color: black;
+      text-transform: capitalize;
+    }
+
+    .logo h1 {
+      font-size: 35px;
+    }
+
+    main {
+      /* text-align: center; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    main form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    main form input[type="text"] {
+      height: 30px;
+      width: 400px;
+      padding: 10px;
+      margin: 20px;
+      /* border-radius: 10px; */
+      font-size: 16px;
+    }
+
+    main form input[type="checkbox"] {
+      /* margin-left: 10px; */
+      height: 30px;
+      width: 400px;
+    }
+
+    main form button {
+      height: 40px;
+      width: 150px;
+      cursor: pointer;
+      margin: 20px;
+      background-color: green;
+      color: white;
+      font-size: 16px;
+      border: none;
+      margin-left: 150px;
+    }
+
+    label {
+      margin-left: 230px;
+      margin-top: -20px;
+    }
+
+    .list {
+      /* border: 2px solid red; */
+      margin-top: 20px;
+    }
+
+    span {
+      font-size: 20px;
+    }
+
+    .list a {
+      text-decoration: none;
+    }
+
+    .check {
+      margin-left: 10px;
+
+    }
+
+    .edit {
+      background-color: green;
+      padding: 5px;
+      margin-left: 10px;
+      color: white;
+    }
+
+    .delete {
+      background-color: red;
+      padding: 5px;
+      margin-left: 10px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>stige</h1>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <a aria-current="page" href="/">Home</a>
+          </li>
+          <li>
+            <a href="/userprofile">Profile</a>
+          </li>
+          <li>
+            <a href="/task">Add task</a>
+          </li>
+          <li>
+            <a href="/course">your courses</a>
+          </li>
+
+          <li>
+            <a href="/logout">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <form action="/task" method="POST">
+      <input type="text" name="content" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter Task" />
+
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" name="comp" />
+      <label class="form-check-label" for="exampleCheck1">Mark as completed</label>
+
+      <button type="submit">
+        Add Task
+      </button>
+    </form>
+
+    <div class="list">
+      <ul>
+        <% Tasks.forEach(details=> { %>
+          <li>
+            <span>
+              <%= details.content %>
+            </span>
+            <span class="check">
+              <%= details.iscomplete %>
+            </span>
+            <a href="task/edit/<%= details._id %>" class="edit">
+              Edit
+            </a>
+            <a href="/task/remove/<%= details._id %>" class="delete">
+              Delete
+            </a>
+          </li>
+          <% }) %>
+      </ul>
+    </div>
+  </main>
+</body>
+
+</html>

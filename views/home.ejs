@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Online Learning Website | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      height: 70px;
+      /* background-color: pink; */
+      padding: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: space-between;
+      width: 600px;
+      margin-top: 8px;
+    }
+
+    nav ul li {
+      list-style: none;
+
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-size: 17px;
+      color: black;
+      text-transform: capitalize;
+    }
+
+    .logo h1 {
+      font-size: 35px;
+    }
+
+    .main {
+      text-align: center;
+      height: 150px;
+      margin-top: 20px;
+      padding: 20px;
+    }
+
+    .main h1 {
+      margin: 10px;
+      font-size: 40px;
+    }
+
+    .main p {
+      margin: 10px;
+      font-size: 20px;
+    }
+
+    .main button {
+      height: 70px;
+      width: 400px;
+      font-size: 20px;
+      background-color: green;
+      color: whitesmoke;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
+      border-radius: 10px;
+    }
+
+    .skills {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .skills div {
+      height: 150px;
+      width: 450px;
+      /* border: 2px solid red; */
+      padding: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .skills div h1 {
+      font-size: 25px;
+    }
+
+    .skills div p {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .skills2 {
+      margin-top: -20px;
+    }
+
+    footer {
+      height: 50px;
+      background-color: rgb(1, 82, 19);
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    footer div {
+      width: 500px;
+      display: flex;
+      justify-content: space-between;
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    footer div a {
+      text-decoration: none;
+      color: whitesmoke;
+      font-size: 20px;
+    }
+
+    footer button {
+      height: 40px;
+      width: 150px;
+      background-color: whitesmoke;
+      color: green;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>stige</h1>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <a aria-current="page" href="/">Home</a>
+            <% if(auth==="logged" ){ %>
+          </li>
+          <li>
+            <a href="/userprofile">Profile</a>
+          </li>
+          <li>
+            <a href="/task">Add task</a>
+          </li>
+          <li>
+            <a href="/course">your courses</a>
+          </li>
+
+          <li>
+            <a href="/logout">Logout</a>
+          </li>
+          <% } else { %>
+            <li>
+              <a href="/login">Login</a>
+            </li>
+            <li>
+              <a href="/register">Sign Up</a>
+            </li>
+            <% } %>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section>
+    <div class="main">
+      <h1>Internship Training Program</h1>
+      <p>Get trained, work on live projects and get certified in 8 weeks.</p>
+      <% if(auth !="logged" ){ %>
+        <a href="/register"><button>Register for Free</button></a>
+        <% } %>
+
+    </div>
+    <div class="skills">
+      <div>
+        <h1>1. Upskilling</h1>
+        <p>8 Weeks of intensive training & certifications through structured, industry vetted curriculum.
+        </p>
+      </div>
+      <div>
+        <h1>2. Live Projects</h1>
+        <p>Build real, ready-to-ship products with team members, professionals & students from other tracks.
+        </p>
+      </div>
+    </div>
+    <div class="skills skills2">
+      <div>
+        <h1>3. Workplace Skills</h1>
+        <p>Build your resume,enhance your profile & get noticed by recruiters from top companies.</p>
+      </div>
+      <div>
+        <h1>4. Industry Certification</h1>
+        <p>Get Internship & training certificates and gain a point of differentiation on your CV for your
+          college placements.</p>
+      </div>
+    </div>
+    <footer>
+      <% if(auth !="logged" ){ %>
+        <a href="/register"><button>Register</button></a>
+        <% } else { %>
+          <a href=""><button>Apply Now</button></a>
+          <% } %>
+            <div>
+              <a href="#">Contact US</a>
+              <a href="#">Request a Call Back</a>
+              <a href="#">T&C</a>
+              <a href="#">Privacy</a>
+            </div>
+    </footer>
+  </section>
+
+</body>
+
+</html>

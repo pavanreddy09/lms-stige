@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title>Register</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            height: 70px;
+            /* background-color: pink; */
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            margin-top: 8px;
+        }
+
+        nav ul li {
+            list-style: none;
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 17px;
+            color: black;
+            text-transform: capitalize;
+        }
+
+        .logo h1 {
+            font-size: 35px;
+        }
+
+        main {
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+        }
+
+        main form {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        main form input {
+            height: 30px;
+            width: 400px;
+            padding: 10px;
+            margin: 20px;
+            /* border-radius: 10px; */
+            font-size: 16px;
+        }
+
+        main form button {
+            height: 40px;
+            width: 150px;
+            cursor: pointer;
+            margin: 20px;
+            background-color: green;
+            color: white;
+            font-size: 16px;
+            border: none;
+            margin-left: 150px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>stige</h1>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <a aria-current="page" href="/">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="/login">Login</a>
+                    </li>
+                    <li>
+                        <a href="/register">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Sign Up</h1>
+        <form action="/register" method="POST">
+            <input type="text" class="form-control" name="username" placeholder="Enter your username"
+                id="exampleInputEmail1" aria-describedby="emailHelp" required>
+
+
+            <input type="email" name="email" id="exampleFormControlInput1" placeholder="Enter your email" required>
+
+
+            <input type="password" name="password" id="exampleInputPassword1" placeholder="Enter your password"
+                required>
+
+
+
+            <input type="text" name="phone" id="exampleFormControlInput2" placeholder="Enter your mobile no" required>
+
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+
+
+    </main>
+
+</body>
+
+</html>
